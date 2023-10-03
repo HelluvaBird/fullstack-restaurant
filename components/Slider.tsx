@@ -1,5 +1,6 @@
 'use client';
 
+// @ts-ignore
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import Testimonial from './Testimonial';
