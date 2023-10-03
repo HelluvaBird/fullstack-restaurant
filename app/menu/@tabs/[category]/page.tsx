@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const getCategory = async (category: string) => {
   const res = await fetch(
-    `http://localhost:3000/api/products?category=${category}`,
+    `${process.env.BASE_URL}/api/products?category=${category}`,
     { cache: 'no-store' }
   );
 
