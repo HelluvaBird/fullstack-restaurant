@@ -1,4 +1,5 @@
 import ProductCard from './ProductCard';
+import { prisma } from '@/lib/prisma';
 
 export interface Products {
   id: string;
@@ -12,16 +13,16 @@ export interface Products {
   createdAt: Date;
 }
 
-export const getFeatured = async () => {
-  const res = await fetch('http://localhost:3000/api/products', {
-    cache: 'no-store',
+export const getFeatured = async (category?: string) => {
+  return prisma.product.findMany({
+    where: {
+      ...(category ? { categorySlug: category } : { isFeatured: true }),
+    },
   });
-
-  return res.json();
 };
 
 export default async function Featured() {
-  const products: Products[] = await getFeatured();
+  const products = await getFeatured();
   return (
     <div className="flex justify-center p-4">
       <div className="max-w-7xl w-full">

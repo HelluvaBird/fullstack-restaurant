@@ -24,9 +24,15 @@ import { StarIcon } from '@heroicons/react/20/solid';
 //   return await res.json();
 // };
 
-export default async function MenuPage() {
+interface Props {
+  searchParams: {
+    [key: string]: string;
+  };
+}
+
+export default async function MenuPage({ searchParams: { category } }: Props) {
   // const categories: Category[] = await getCategories();
-  const products: Products[] = await getFeatured();
+  const products = await getFeatured(category);
   return (
     <div className="flex justify-center">
       <div className="w-full max-w-7xl">

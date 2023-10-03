@@ -1,7 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Products } from './Featured';
 import { PlusCircleIcon } from '@heroicons/react/20/solid';
+
+interface ProductCardProps {
+  id: string;
+  img: string | null;
+  title: string;
+  description: string;
+  price: number;
+}
 
 export default function ProductCard({
   id,
@@ -9,7 +16,7 @@ export default function ProductCard({
   title,
   description,
   price,
-}: Products) {
+}: ProductCardProps) {
   return (
     <div className="h-[50vh] flex flex-col items-center justify-around p-4 hover:bg-green-50 transition-colors">
       {img && (
