@@ -37,7 +37,7 @@ export default function LoginPage() {
     }
   };
   return (
-    <div className="flex-1 grid place-items-center">
+    <div className="pt-16 p-4 flex-1 grid place-items-center">
       <form
         className="max-w-[500px] w-[95%] md:w-full border border-red-300 p-4 rounded-md"
         onSubmit={handleSubmit}

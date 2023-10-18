@@ -41,7 +41,7 @@ export default function CancelModal({ params: { id } }: Props) {
   return (
     <div
       ref={overlay}
-      className="fixed inset-0 bg-black/60 grid place-items-center px-4"
+      className="fixed inset-0 bg-black/60 grid place-items-center px-4 z-50"
       onClick={onClick}
     >
       <div className="p-4 bg-gray-50 rounded-md relative">

@@ -44,7 +44,7 @@ export default function PayPage({ params: { id } }: Props) {
   };
 
   return (
-    <div className="flex-1 flex flex-col justify-center p-4 lg:px-20 xl:px-40">
+    <div className="pt-16 flex-1 flex flex-col justify-center p-4 lg:px-20 xl:px-40">
       {clientSecret ? (
         <Elements options={options} stripe={stripePromise}>
           <CheckoutForm />

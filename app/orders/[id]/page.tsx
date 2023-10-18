@@ -53,24 +53,24 @@ export default function OrderPage({
   orderColor.set('Being prepared!', 'rgb(249 115 22)');
 
   return (
-    <div className="flex-1 p-4 flex justify-center bg-gray-50">
+    <div className="pt-16 flex-1 p-4 flex justify-center bg-gray-50">
       {isLoading || status === 'loading' ? (
         <div className="w-full max-w-7xl">Loading...</div>
       ) : (
         <div className="w-full max-w-7xl">
-          <div className="flex flex-wrap justify-between mb-8">
+          <div className="flex flex-wrap justify-between mb-8 space-y-4 md:space-y-0">
             <p className="text-xl md:text-3xl lg:text-4xl">Order: {id}</p>
             {order.status === 'delivered' || order.status === 'cancelled' ? (
               <button
                 type="button"
-                className="px-4 py-2 bg-green-500 text-white rounded-md"
+                className="w-full md:w-auto px-4 py-2 bg-green-500 text-white rounded-md"
                 onClick={handleReorder}
               >
                 Reorder
               </button>
             ) : null}
             {order.status === 'Not Paid' ? (
-              <div className="grid gap-1">
+              <div className="grid gap-1 w-full md:w-auto">
                 <button
                   type="button"
                   className="block px-4 py-2 bg-green-500 text-white rounded-md"
@@ -90,7 +90,7 @@ export default function OrderPage({
             {order.status === 'Being prepared!' ? (
               <button
                 type="button"
-                className="block text-green-500 border border-green-500 bg-transparent px-4 py-2 rounded-md"
+                className="block w-full md:w-auto text-green-500 border border-green-500 bg-transparent px-4 py-2 rounded-md"
                 onClick={() => router.push(`/orders/${order.id}/cancel`)}
               >
                 Cancel Order

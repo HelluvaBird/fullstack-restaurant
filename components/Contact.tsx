@@ -21,7 +21,7 @@ export default function Contact() {
   return (
     <div
       id="contact"
-      className="h-[50vh] bg-green-50 text-center grid place-items-center px-4"
+      className="bg-green-50 text-center grid place-items-center p-4"
     >
       <div className="max-w-xl w-full mx-auto">
         <p className="text-xl text-green-800">get in touch</p>

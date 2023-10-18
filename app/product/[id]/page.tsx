@@ -16,7 +16,7 @@ const getProduct = async (id: string) => {
 export default async function ProductPage({ params: { id } }: Props) {
   const product: Products = await getProduct(id);
   return (
-    <div className="px-4 flex-1 text-red-500 md:flex-row relative flex md:items-center justify-center">
+    <div className="pt-16 p-4 flex-1 text-red-500 md:flex-row relative flex md:items-center justify-center">
       <div className="max-w-7xl flex flex-col md:flex-row md:gap-8 md:items-center">
         {product.img && (
           <div className="flex-1">

@@ -42,7 +42,7 @@ export default function RegisterPage() {
     }
   };
   return (
-    <div className="flex-1 grid place-items-center">
+    <div className="pt-16 p-4 flex-1 grid place-items-center">
       <form
         onSubmit={handleSubmit}
         className="max-w-[500px] w-[95%] md:w-full border border-red-300 p-4 rounded-md"

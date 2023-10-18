@@ -76,7 +76,7 @@ export default function CheckoutForm() {
         <button
           type="submit"
           disabled={isLoading || !stripe || !elements}
-          className="bg-red-500 text-white p-4 rounded-md w-28 mt-8"
+          className="bg-red-500 text-white p-4 rounded-md md:w-28 mt-8 w-full"
         >
           <span id="button-text">{isLoading ? <Spinner /> : 'Pay now'}</span>
         </button>

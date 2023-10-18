@@ -25,7 +25,7 @@ export default function Menu() {
         <Bars3Icon className="w-5 h-5" onClick={() => setIsMenuOpen(true)} />
       )}
       {isMenuOpen ? (
-        <div className="bg-red-500 text-white absolute left-0 top-12 w-full bottom-0 flex flex-col gap-8 items-center justify-center text-3xl z-10">
+        <div className="bg-red-500 text-white fixed left-0 top-12 w-full bottom-0 flex flex-col gap-8 items-center justify-center text-3xl z-10">
           {links.map((link) => (
             <Link
               href={link.url}

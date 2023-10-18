@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Offer() {
   return (
-    <div className="h-[50vh] bg-green-700 md:bg-[url('/images/offer-background.jpg')] md:bg-green-900 bg-blend-multiply bg-cover bg-bottom flex items-center">
+    <div className="py-12 bg-green-700 md:bg-[url('/images/offer-background.jpg')] md:bg-green-900 bg-blend-multiply bg-cover bg-bottom flex items-center">
       <div className="flex flex-col md:flex-row md:justify-between w-full max-w-7xl mx-auto">
         <div className="flex-1 flex flex-col items-center justify-center text-center gap-8 p-6">
           <h3 className="text-white text-5xl font-bold xl:text-6xl">
@@ -22,10 +22,11 @@ export default function Offer() {
             </span>
           </Link>
         </div>
-        <div className="relative flex-1 w-full h-96">
+        <div className="hidden md:block relative flex-1 w-full h-96">
           <Image
             src="/images/offerProduct.png"
             alt=""
+            priority
             fill
             sizes="50vw"
             className="object-contain"

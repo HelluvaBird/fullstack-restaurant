@@ -18,9 +18,9 @@ export default function ProductCard({
   price,
 }: ProductCardProps) {
   return (
-    <div className="h-[50vh] flex flex-col items-center justify-around p-4 hover:bg-green-50 transition-colors">
+    <div className="flex flex-col items-center justify-around p-4 hover:bg-green-50 transition-colors">
       {img && (
-        <div className="relative flex-1 w-full">
+        <div className="relative flex-1 basis-24 sm:basis-36 w-full">
           <Image
             src={img}
             alt=""

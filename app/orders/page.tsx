@@ -59,20 +59,20 @@ export default function OrdersPage() {
 
   if (isLoading || status === 'loading')
     return (
-      <div className="flex-1 p-4 lg:px-20 xl:px-40 flex items-center justify-center">
+      <div className="pt-16 flex-1 p-4 lg:px-20 xl:px-40 flex items-center justify-center">
         Loading...
       </div>
     );
 
   return status === 'authenticated' ? (
-    <div className="flex-1 p-4 flex justify-center">
+    <div className="pt-16 flex-1 p-4 flex justify-center">
       <div className="w-full max-w-7xl">
         <table className="w-full border-separate border-spacing-3">
           <thead>
             <tr className="text-left">
-              <th className="hidden md:block">Order ID</th>
-              <th>Date</th>
-              <th>Price</th>
+              <th>Order ID</th>
+              <th className="hidden md:table-cell">Date</th>
+              <th className="hidden md:table-cell">Price</th>
               <th>Status</th>
             </tr>
           </thead>
@@ -88,12 +88,15 @@ export default function OrdersPage() {
                     : 'bg-gray-50'
                 }`}
               >
-                <td className="hidden md:block py-6 px-1">
-                  <Link href={`/orders/${item.id}`} className="text-red-500">
+                <td className="py-6 px-1">
+                  <Link
+                    href={`/orders/${item.id}`}
+                    className="text-red-500 underline"
+                  >
                     {item.id}
                   </Link>
                 </td>
-                <td className="py-6 px-1">
+                <td className="hidden md:table-cell py-6 px-1">
                   {new Date(item.createdAt).toLocaleDateString('en-us', {
                     weekday: 'short',
                     year: 'numeric',
@@ -101,7 +104,9 @@ export default function OrdersPage() {
                     day: 'numeric',
                   })}
                 </td>
-                <td className="py-6 px-1">${(item.price / 100).toFixed(2)}</td>
+                <td className="hidden md:table-cell py-6 px-1">
+                  ${(item.price / 100).toFixed(2)}
+                </td>
                 {session.user.isAdmin && item.status === 'Being prepared!' ? (
                   <td>
                     <form

@@ -62,7 +62,7 @@ export default function Price({ id, title, img, price, options }: Products) {
                   <button
                     type="button"
                     key={option.title}
-                    className="min-w-[6rem] p-2 ring-1 ring-green-400 rounded-md"
+                    className="md:max-w-[6rem] flex-1 p-2 ring-1 ring-green-400 rounded-md"
                     style={{
                       backgroundColor:
                         selected === index ? 'rgb(74 222 128)' : 'white',
@@ -75,7 +75,7 @@ export default function Price({ id, title, img, price, options }: Products) {
                 ))
               : null}
           </div>
-          <div className="flex justify-between items-center">
+          <div className="space-y-2 md:space-y-0 md:flex justify-between items-center">
             <div className="flex justify-between flex-1 p-3 ring-1 ring-red-500">
               <span>Quantity</span>
               <div className="flex gap-4 items-center">
@@ -96,7 +96,7 @@ export default function Price({ id, title, img, price, options }: Products) {
             </div>
             <button
               type="button"
-              className="uppercase bg-red-500 text-white p-3 ring-1 ring-red-500"
+              className="w-full md:w-auto uppercase bg-red-500 text-white p-3 ring-1 ring-red-500"
               onClick={handleCart}
             >
               Add to Cart

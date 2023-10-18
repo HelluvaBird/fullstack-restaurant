@@ -34,8 +34,8 @@ export default function CartPage() {
     }
   };
   return (
-    <div className="flex-1 text-red-500 grid md:grid-cols-2 gap-4 2xl:gap-6 max-w-7xl w-full mx-auto">
-      <div className="px-4 flex flex-col justify-center overflow-auto">
+    <div className="flex-1 text-red-500 grid md:grid-cols-2 max-w-7xl w-full mx-auto">
+      <div className="pt-16 px-4 flex flex-col justify-center overflow-auto">
         {cart.length < 1 ? (
           <p>Your cart is empty</p>
         ) : (
@@ -63,7 +63,7 @@ export default function CartPage() {
           ))
         )}
       </div>
-      <div className="px-4 bg-green-50 flex flex-col gap-4 justify-center 2xl:text-xl 2xl:gap-6">
+      <div className="pt-16 px-4 pb-4 bg-green-50 flex flex-col gap-4 justify-center 2xl:text-xl 2xl:gap-6">
         <div className="flex justify-between">
           <span>Subtotal ({getCartQuantity()} items)</span>
           <span>${(getCartTotal() / 100).toFixed(2)}</span>

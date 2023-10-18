@@ -5,7 +5,7 @@ import CartIcon from './CartIcon';
 
 export default function Navbar() {
   return (
-    <header className="h-12 p-4 text-red-500 flex items-center justify-center border-b-2 border-b-red-500 uppercase">
+    <header className="fixed top-0 left-0 right-0 z-20 bg-white h-12 p-4 text-red-500 flex items-center justify-center border-b-2 border-b-red-500 uppercase">
       <div className="flex items-center max-w-7xl w-full">
         <div className="hidden md:flex gap-4">
           <Link href="/">Home</Link>
@@ -15,7 +15,7 @@ export default function Navbar() {
         <div className="text-xl md:font-bold md:text-center me-auto md:ms-auto">
           <Link href="/">Maxximu</Link>
         </div>
-        <div className="md:hidden">
+        <div className="md:hidden cursor-pointer">
           <Menu />
         </div>
         <div className="hidden md:flex gap-2 items-center justify-end">
